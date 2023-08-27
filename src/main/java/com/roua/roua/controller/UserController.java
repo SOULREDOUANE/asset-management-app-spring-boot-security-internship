@@ -6,6 +6,7 @@ import com.roua.roua.register.AuthenticationRequest;
 import com.roua.roua.register.AuthenticationResponse;
 import com.roua.roua.register.RegisterRequest;
 import com.roua.roua.service.AuthenticationService;
+import com.roua.roua.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequiredArgsConstructor
 public class UserController {
     private final AuthenticationService service;
+    private final UserService userService;
 
     @PostMapping(value="/register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
@@ -37,6 +39,16 @@ public class UserController {
     public String hello(){
         return "hi there";
     }
+
+
+
+    @GetMapping("/all")
+    public ResponseEntity<String> getAllUsers() {
+        return ResponseEntity.ok("All users");
+    }
+
+
+
     
     
     

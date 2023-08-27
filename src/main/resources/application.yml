@@ -3,6 +3,11 @@ jwt:
 
 server:
     port: 8080
+    # error:
+    #     whitelabel:
+    #         enabled: false
+
+
 
 spring:
     datasource:
@@ -12,7 +17,7 @@ spring:
     jpa:
         show-sql: true
         hibernate:
-            ddl-auto: update
+            ddl-auto: create
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -28,3 +33,7 @@ spring:
                 refresh-token:
                     expiration:
                         refreshExpiration: 604800000
+# mvc:
+#     throw-exception-if-no-handler-found: true
+# resources:
+#     add-mappings: false
